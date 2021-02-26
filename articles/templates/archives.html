@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+
+{% block title %} Article {% endblock %}
+
+{% block content %}
+ <div>Archives. Article{% if article_id %} with id {{ article_id }} {% endif %}.</div>
+{% include "send_main.html" %}
+{% endblock %}

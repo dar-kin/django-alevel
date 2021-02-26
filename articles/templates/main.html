@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block title %} Main {% endblock %}
+
+{% block content %}
+    <div>
+       <a href="{% url 'articles:article_number' article_id %}">Random number</a>
+    </div>
+    <div>
+      <a href="{% url 'articles:article_slug' article_slug %}">Random slug</a>
+    </div>
+    <div>
+        <a href="{% url 'articles:article_number_slug' article_id article_slug %}">Random number and slug</a>
+    </div>
+{% endblock %}

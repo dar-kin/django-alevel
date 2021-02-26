@@ -3,12 +3,12 @@ from django.http import HttpResponse
 
 
 def hello_view(request):
-    return HttpResponse("Hello")
+    return render(request, "hello.html", {"hello": "hello"})
 
 
 def phone(request, phone_number):
-    return HttpResponse(phone_number)
+    return render(request, "phone.html", {"phone": phone_number})
 
 
 def trash(request, some_trash):
-    return HttpResponse(some_trash)
+    return render(request, "trash.html", {"trash": some_trash})

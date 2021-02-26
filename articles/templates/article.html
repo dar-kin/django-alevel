@@ -1,0 +1,11 @@
+
+{% extends "index.html" %}
+{% load filters %}
+{% block title %} Article {% endblock %}
+
+{% block content %}
+ <div>Article {% if article_id %} with id {{ article_id }}.
+  Id is {% if article_id|is_even %}even{% else %}odd{%endif%}{% endif %}
+ {% if article_slug %}{% include "slug.html" with article_slug=article_slug%}{% endif %}</div>
+{% include "send_main.html" %}
+{% endblock %}
