@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'myapp.apps.MyappConfig',
     'articles.apps.ArticlesConfig',
     'users.apps.UsersConfig',
+    "task2.apps.Task2Config",
+    "task1.apps.Task1Config",
+    "task3.apps.Task3Config",
 ]
 
 MIDDLEWARE = [
@@ -78,8 +81,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'initial',
+        'USER': 'darkin',
+        'PASSWORD': 'letmein',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
