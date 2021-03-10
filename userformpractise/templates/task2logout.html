@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block title %} Logout {% endblock %}
+
+{% block content %}
+<form method="post" action="{% url 'userformpractise:logout' %}">
+    <button type="submit">Logout</button>
+    {% csrf_token %}
+</form>
+{% endblock %}

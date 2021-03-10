@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block title %} Task 1 {% endblock %}
+
+{% block content %}
+<form method="post" name="{% url 'userformpractise:task1' %}">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
