@@ -37,7 +37,7 @@ def login_view(request):
     return render(request, "task2login.html", {"form": form})
 
 
-@login_required()
+@login_required
 def logout_view(request):
     if request.method == "POST":
         logout(request)
@@ -59,7 +59,7 @@ def registration_view(request):
     return render(request, "task3registration.html", {"form": form})
 
 
-@login_required()
+@login_required
 def password_change_view(request):
     if request.method == "POST":
         form = Task4PasswordChangeForm(request.POST)
@@ -76,12 +76,12 @@ def password_change_view(request):
     return render(request, "task4change_password.html", {"form": form, "username": request.user.username})
 
 
-@login_required()
+@login_required
 def password_change_success(request):
     return HttpResponse("Password successfully changed")
 
 
-@login_required()
+@login_required
 def search_comments(request):
     form = Task56CommentSearchForm(request.GET)
     if form.is_valid():
