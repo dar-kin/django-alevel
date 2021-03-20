@@ -5,7 +5,9 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+{% include "session.html" %}
     {% block content %}
+
     {% endblock %}
 </body>
 </html>

@@ -26,7 +26,7 @@ SECRET_KEY = 'z*ivxpa(=jw2i9-vv_zop*$t2f6gikg!&2lst#074xn@ixl%yc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite.com']
+ALLOWED_HOSTS = ['mysite.com', "localhost"]
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "task1.apps.Task1Config",
     "task3.apps.Task3Config",
     "userformpractise.apps.UserFormPractiseConfig",
+    "sessioncache.apps.SessioncacheConfig",
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'sessioncache.middleware.SessionCacheMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -70,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'sessioncache.misc.get_count',
             ],
         },
     },
@@ -131,3 +134,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_URL = reverse_lazy("userformpractise:login")
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': 'd:/foo/bar',
+    }
+}

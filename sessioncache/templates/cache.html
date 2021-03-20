@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block title %} Session task {% endblock %}
+
+{% block content %}
+<p>Hello {{ request.user.username }}</p>
+{{ number }}
+{% if congrats %}
+{{ congrats }}
+{% endif %}
+{% endblock %}

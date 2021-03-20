@@ -9,5 +9,6 @@ urlpatterns = [
     path("articles/", include('articles.urls', namespace='articles')),
     path("users/", include("users.urls", namespace="users")),
     path("userformpractise/", include("userformpractise.urls", namespace="userformpractise")),
+    path('session/', include("sessioncache.urls", namespace="session")),
     path("", main, name="main")
 ]
