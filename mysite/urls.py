@@ -10,5 +10,6 @@ urlpatterns = [
     path("users/", include("users.urls", namespace="users")),
     path("userformpractise/", include("userformpractise.urls", namespace="userformpractise")),
     path('session/', include("sessioncache.urls", namespace="session")),
-    path("", main, name="main")
+    path("api/", include("rest.urls")),
+    path("", main, name="main"),
 ]

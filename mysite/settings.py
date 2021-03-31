@@ -26,7 +26,7 @@ SECRET_KEY = 'z*ivxpa(=jw2i9-vv_zop*$t2f6gikg!&2lst#074xn@ixl%yc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite.com', "localhost"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "task3.apps.Task3Config",
     "userformpractise.apps.UserFormPractiseConfig",
     "sessioncache.apps.SessioncacheConfig",
+    "rest.apps.RestConfig",
 ]
 
 MIDDLEWARE = [
@@ -86,12 +87,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'initial',
-        'USER': 'darkin',
-        'PASSWORD': 'letmein',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / 'db.sqlite'
     }
 }
 
@@ -141,3 +138,4 @@ CACHES = {
         'LOCATION': 'd:/foo/bar',
     }
 }
+
